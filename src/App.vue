@@ -1,20 +1,19 @@
 <template>
   <div id="app">
-    <font-awesome-icon class="season-icon" :icon="['fas', 'cloud-showers-heavy']" />
-    <font-awesome-icon class="season-icon" :icon="['fas', 'sun']" />
-    <font-awesome-icon class="season-icon" :icon="['fas', 'wind']" />
-    <font-awesome-icon class="season-icon" :icon="['fas', 'snowflake']" />
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TitleCard />
+    <Season msg="First Winter" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/TitleCard.vue'
+import TitleCard from './components/TitleCard.vue'
+import Season from './components/Season.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TitleCard,
+    Season
   }
 }
 </script>
@@ -25,14 +24,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
-}
-.season-icon {
-  font-size: 5em;
-  margin-left: 40px;
-}
-.season-icon:first-child {
-  margin-left: 0;
 }
 </style>
