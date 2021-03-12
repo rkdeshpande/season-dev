@@ -44,10 +44,10 @@ a {
 }
 .inactive {
   color: #808b96;
-  font-size: 1.5em;
+  font-size: 1.25em;
 }
 .active {
-  font-size: 3em;
+  font-size: 2.5em;
   color: #2c3e50;
 }
 </style>

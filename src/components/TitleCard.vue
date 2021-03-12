@@ -39,7 +39,7 @@ export default {
 }
 h1 {
   margin-top: 15px;
-  font-size: 4.5em;
+  font-size: 4em;
   font-family: 'Cormorant', serif;
 }
 ul {
@@ -54,7 +54,7 @@ a {
   color: #42b983;
 }
 .season-icon {
-  font-size: 5em;
+  font-size: 3.5em;
   margin-left: 40px;
 }
 .season-icon:first-child {
