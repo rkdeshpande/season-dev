@@ -34,13 +34,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One');
 .hello {
   color: #2c3e50;
 }
 h1 {
-  margin-top: 15px;
-  font-size: 4em;
-  font-family: 'Cormorant', serif;
+  margin-top: 13px;
+  font-size: 3.25em;
+  font-family: 'Yeseva One', sans-serif;
 }
 ul {
   list-style-type: none;

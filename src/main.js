@@ -3,7 +3,6 @@ import App from './App.vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCloudShowersHeavy, faSun, faWind, faSnowflake } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import './App.css'
 
 library.add(faCloudShowersHeavy)
 library.add(faSun)

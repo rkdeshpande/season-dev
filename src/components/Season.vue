@@ -20,7 +20,7 @@ export default {
   name: 'Season',
   data: () => {
     return {
-      status: 5
+      status: 4
     }
   }
 }
@@ -28,9 +28,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-  font-family: 'Roboto Slab', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 ul {
   list-style-type: none;
   padding: 0;
@@ -45,9 +44,12 @@ a {
 .inactive {
   color: #808b96;
   font-size: 1.25em;
+  font-family: 'Roboto Slab', serif;
 }
 .active {
   font-size: 2.5em;
   color: #2c3e50;
+  font-family: 'Signika', sans-serif;
+  text-transform: uppercase;
 }
 </style>
