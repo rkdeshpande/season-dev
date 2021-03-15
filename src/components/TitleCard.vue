@@ -40,7 +40,7 @@ export default {
 }
 h1 {
   margin-top: 13px;
-  font-size: 3.25em;
+  font-size: 3em;
   font-family: 'Yeseva One', sans-serif;
 }
 ul {
