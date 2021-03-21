@@ -20,7 +20,7 @@ export default {
   name: 'Season',
   data: () => {
     return {
-      status: 5
+      status: 6
     }
   }
 }
