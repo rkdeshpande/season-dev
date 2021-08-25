@@ -12,7 +12,7 @@ import $ from 'jquery'
 
 function getWeather(q, callback) {
   const url = 'http://api.openweathermap.org/data/2.5/weather';
-  const appid = 'a973c7588f25f457987274e21d050af1'
+  const appid = process.env.OPEN_WEATHER_APP_ID
   $.ajax({
     dataType: "jsonp",
     url: url,
