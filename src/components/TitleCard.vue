@@ -1,3 +1,5 @@
+
+
 <template>
   <div class="hello">
     <font-awesome-icon class="season-icon" v-bind:class="{ spring: isSpring}" :icon="['fas', 'cloud-showers-heavy']" />
@@ -9,26 +11,30 @@
 </template>
 
 <script>
-function data() {
-  let today = new Date(Date.now())
+// import $ from 'jquery'
 
-  let year = today.getFullYear()
-  let spring = new Date(`March 20, ${year}`)
-  let summer = new Date(`June 21, ${year}`)
-  let autumn = new Date(`September 22, ${year}`)
-  let winter = new Date(`December 21, ${year}`)
-
-  return {
-    isSpring: today >= spring && today < summer,
-    isSummer: today >= summer && today < autumn,
-    isAutumn: today >= autumn && today < winter,
-    isWinter: today < spring || today >= winter
-  }
-}
+// function getWeather(city, callback) {
+//   const url = 'http://api.openweathermap.org/data/2.5/weather';
+//   $.ajax({
+//     dataType: "jsonp",
+//     url: url,
+//     jsonCallback: 'jsonp',
+//     data: { q: city },
+//     cache: false,
+//     success: function (data) {
+//       callback(data.main.temp);
+//     }
+//   });
+// }
 
 export default {
   name: 'TitleCard',
-  data: data
+  props: [
+      'isSpring',
+      'isSummer',
+      'isAutumn',
+      'isWinter'
+  ]
 }
 </script>
 

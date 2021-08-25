@@ -1,28 +1,24 @@
 <template>
   <div class="hello">
-    <h1 v-bind:class="{active: status === 1, inactive: status !== 1}">Winter</h1>
-    <h1 v-bind:class="{active: status === 2, inactive: status !== 2}">Fool's Spring</h1>
-    <h1 v-bind:class="{active: status === 3, inactive: status !== 3}">Second Winter</h1>
-    <h1 v-bind:class="{active: status === 4, inactive: status !== 4}">Spring of Deception</h1>
-    <h1 v-bind:class="{active: status === 5, inactive: status !== 5}">Third Winter</h1>
-    <h1 v-bind:class="{active: status === 6, inactive: status !== 6}">The Pollening</h1>
-    <h1 v-bind:class="{active: status === 7, inactive: status !== 7}">Actual Spring</h1>
-    <h1 v-bind:class="{active: status === 8, inactive: status !== 8}">Summer</h1>
-    <h1 v-bind:class="{active: status === 9, inactive: status !== 9}">Hell's Front Porch</h1>
-    <h1 v-bind:class="{active: status === 10, inactive: status !== 10}">False Fall</h1>
-    <h1 v-bind:class="{active: status === 11, inactive: status !== 11}">Second Summer</h1>
-    <h1 v-bind:class="{active: status === 12, inactive: status !== 12}">Actual Fall</h1>
+    <h1 v-bind:class="{active: season === 1, inactive: season !== 1}">Winter</h1>
+    <h1 v-bind:class="{active: season === 2, inactive: season !== 2}">Fool's Spring</h1>
+    <h1 v-bind:class="{active: season === 3, inactive: season !== 3}">Second Winter</h1>
+    <h1 v-bind:class="{active: season === 4, inactive: season !== 4}">Spring of Deception</h1>
+    <h1 v-bind:class="{active: season === 5, inactive: season !== 5}">Third Winter</h1>
+    <h1 v-bind:class="{active: season === 6, inactive: season !== 6}">The Pollening</h1>
+    <h1 v-bind:class="{active: season === 7, inactive: season !== 7}">Actual Spring</h1>
+    <h1 v-bind:class="{active: season === 8, inactive: season !== 8}">Summer</h1>
+    <h1 v-bind:class="{active: season === 9, inactive: season !== 9}">Hell's Front Porch</h1>
+    <h1 v-bind:class="{active: season === 10, inactive: season !== 10}">False Fall</h1>
+    <h1 v-bind:class="{active: season === 11, inactive: season !== 11}">Second Summer</h1>
+    <h1 v-bind:class="{active: season === 12, inactive: season !== 12}">Actual Fall</h1>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Season',
-  data: () => {
-    return {
-      status: 8
-    }
-  }
+  props: ['season']
 }
 </script>
 
