@@ -11,8 +11,8 @@ import Season from './components/Season.vue'
 import $ from 'jquery'
 
 function getWeather(q, callback) {
-  const url = 'http://api.openweathermap.org/data/2.5/weather';
-  const appid = process.env.OPEN_WEATHER_APP_ID
+  const url = 'https://api.openweathermap.org/data/2.5/weather';
+  const appid = "a973c7588f25f457987274e21d050af1"
   $.ajax({
     dataType: "jsonp",
     url: url,
@@ -46,14 +46,28 @@ function getSeasonIcon() {
 }
 
 function calcSeason(temp) {
+  const today = new Date(Date.now())
   const seasons = this.getSeasonIcon();
+  const month = today.getMonth() + 1
 
-  if (seasons["isSpring"] && temp < 45) {
-    this.season = 5;
-  } else if(seasons["isSummer"] && temp > 85) {
-    this.season = 9;
-  } else if (seasons["isAutumn"] && temp > 65) {
-    this.season = 11;
+  if (month === 1) {
+    this.season = 1
+  } else if (month === 2) {
+    this.season = temp >= 40 ? 2 : 1
+  } else if (month === 3) {
+    this.season = temp >= 40 ? 4 : 3
+  } else if (month === 4 || month === 5) {
+    this.season = temp >= 50 ? 6 : 5
+  } else if (month === 6) {
+    this.season = temp >= 70 ? 8 : 7
+  } else if (month === 9 && temp < 65) {
+    this.season = 10
+  } else if (seasons["isSummer"]) {
+    this.season = temp >= 85 ? 9 : 8
+  } else if (seasons["isAutumn"]) {
+    if (temp > 55) this.season = 11
+    else if (temp < 35) this.season = 1
+    else this.season = 12
   }
 }
 
