@@ -55,7 +55,7 @@ function calcSeason(temp) {
   } else if (month === 2) {
     this.season = temp >= 40 ? 2 : 1
   } else if (month === 3) {
-    this.season = temp >= 40 ? 4 : 3
+    this.season = temp >= 40 ? 4 : seasons["isSpring"] ? 5 : 3
   } else if (month === 4 || month === 5) {
     this.season = temp >= 50 ? 6 : 5
   } else if (month === 6) {
