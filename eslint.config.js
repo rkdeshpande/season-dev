@@ -1,22 +1,59 @@
-/** @type {import('eslint').Linter.Config} */
-module.exports = {
-  files: ['src/**/*.{js,jsx,ts,tsx}'],
-  plugins: ['react', '@typescript-eslint'],
-  extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'react-app',
-    'react-app/jest'
-  ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: 'module'
+const js = require('@eslint/js');
+const react = require('eslint-plugin-react');
+const ts = require('@typescript-eslint/eslint-plugin');
+const tsParser = require('@typescript-eslint/parser');
+
+module.exports = [
+  js.configs.recommended,
+  {
+    files: ['src/**/*.{js,jsx,ts,tsx}'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module'
+      }
+    },
+    plugins: {
+      react,
+      '@typescript-eslint': ts
+    },
+    settings: {
+      react: {
+        version: 'detect'
+      }
+    },
+    rules: {
+      // Add custom rules here if needed
+    }
   },
-  settings: {
-    react: {
-      version: 'detect'
+  {
+    files: [
+      '**/*.test.{js,jsx,ts,tsx}',
+      'src/utils/seasonCalculator.ts',
+      'src/__mocks__/*.ts'             
+    ],
+    languageOptions: {
+      globals: {
+        jest: true,
+        describe: true,
+        it: true,
+        expect: true,
+        beforeEach: true,
+        afterEach: true
+      }
+    }
+  },
+  {
+    files: ['src/**/*.{js,jsx,ts,tsx}'],
+    languageOptions: {
+      globals: {
+        console: true,
+        setInterval: true,
+        clearInterval: true,
+        document: true,
+        HTMLElement: true
+      }
     }
   }
-}; 
+]; 

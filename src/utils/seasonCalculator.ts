@@ -50,7 +50,6 @@ describe('Season Calculator', () => {
 export function getSeasonIcon() {
   const today = new Date();
   const month = today.getMonth() + 1;
-  const day = today.getDate();
 
   return {
     isSpring: month >= 3 && month <= 5,
