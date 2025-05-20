@@ -20,6 +20,8 @@
     "vue-fontawesome": "^0.0.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
@@ -32,25 +34,6 @@
     "jquery": "^3.6.0",
     "vue-jest": "^1.4.0",
     "vue-template-compiler": "^2.6.11"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "vue"
-    ],
-    "transform": {
-      "^.+\\.js$": "babel-jest",
-      "^.+\\.vue$": "vue-jest"
-    },
-    "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1"
-    },
-    "testMatch": [
-      "**/tests/unit/**/*.spec.[jt]s?(x)",
-      "**/__tests__/*.[jt]s?(x)"
-    ],
-    "testURL": "http://localhost/"
   },
   "eslintConfig": {
     "root": true,
