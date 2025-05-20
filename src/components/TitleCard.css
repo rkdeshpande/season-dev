@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One');
+
+.hello {
+  color: #2c3e50;
+}
+
+h1 {
+  margin-top: 13px;
+  font-size: 3em;
+  font-family: 'Yeseva One', sans-serif;
+}
+
+.season-icon {
+  font-size: 3.5em;
+  margin-left: 40px;
+}
+
+.season-icon:first-child {
+  margin-left: 0;
+}
+
+.spring {
+  color: #2fc259;
+}
+
+.summer {
+  color: #EA5B32;
+}
+
+.autumn {
+  color: #ead032;
+}
+
+.winter {
+  color: #81e2f1;
+} 
