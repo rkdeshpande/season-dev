@@ -3,7 +3,7 @@ name: Pull Request Checks
 on:
   pull_request:
     branches:
-      - main  # or master, depending on your default branch name
+      - master  # or master, depending on your default branch name
 
 jobs:
   test:
