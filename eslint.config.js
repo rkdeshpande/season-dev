@@ -44,16 +44,4 @@ module.exports = [
       }
     }
   },
-  {
-    files: ['src/**/*.{js,jsx,ts,tsx}'],
-    languageOptions: {
-      globals: {
-        console: true,
-        setInterval: true,
-        clearInterval: true,
-        document: true,
-        HTMLElement: true
-      }
-    }
-  }
 ]; 
