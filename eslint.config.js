@@ -6,12 +6,19 @@ const tsParser = require('@typescript-eslint/parser');
 module.exports = [
   js.configs.recommended,
   {
-    files: ['src/**/*.{js,jsx,ts,tsx}'],
+    files: ['src/**/*.{ts,tsx}'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
         ecmaVersion: 2020,
         sourceType: 'module'
+      },
+      globals: {
+        console: true,
+        setInterval: true,
+        clearInterval: true,
+        document: true,
+        HTMLElement: true
       }
     },
     plugins: {
@@ -28,10 +35,34 @@ module.exports = [
     }
   },
   {
+    files: ['src/**/*.{js,jsx}'],
+    languageOptions: {
+      parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module'
+      },
+      globals: {
+        console: true,
+        setInterval: true,
+        clearInterval: true,
+        document: true,
+        HTMLElement: true
+      }
+    },
+    plugins: {
+      react
+    },
+    settings: {
+      react: {
+        version: 'detect'
+      }
+    }
+  },
+  {
     files: [
       '**/*.test.{js,jsx,ts,tsx}',
       'src/utils/seasonCalculator.ts',
-      'src/__mocks__/*.ts'             
+      'src/__mocks__/*.ts'
     ],
     languageOptions: {
       globals: {
@@ -44,16 +75,4 @@ module.exports = [
       }
     }
   },
-  {
-    files: ['src/**/*.{js,jsx,ts,tsx}'],
-    languageOptions: {
-      globals: {
-        console: true,
-        setInterval: true,
-        clearInterval: true,
-        document: true,
-        HTMLElement: true
-      }
-    }
-  }
 ]; 
