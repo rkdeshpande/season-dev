@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import TitleCard from './components/TitleCard';
-import Season from './components/Season';
-import { getSeasonIcon, calculateSeason } from './utils/seasonCalculator';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import TitleCard from "./components/TitleCard";
+import Season from "./components/Season";
+import { getSeasonIcon, calculateSeason } from "./utils/seasonCalculator";
+import "./App.css";
 
 const App: React.FC = () => {
   const [season, setSeason] = useState<number>(8);
@@ -12,28 +12,31 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
-          params: {
-            q: 'Boston',
-            appid: 'a973c7588f25f457987274e21d050af1'
-          }
-        });
+        const response = await axios.get(
+          "https://api.openweathermap.org/data/2.5/weather",
+          {
+            params: {
+              q: "Boston",
+              appid: "a973c7588f25f457987274e21d050af1",
+            },
+          },
+        );
         const tempMax = response.data.main.temp_max;
-        const tempFahrenheit = (((tempMax - 273.15) * 9) / 5) + 32;
+        const tempFahrenheit = ((tempMax - 273.15) * 9) / 5 + 32;
         setSeason(calculateSeason(tempFahrenheit));
       } catch (error) {
-        console.error('Error fetching weather:', error);
+        console.error("Error fetching weather:", error);
       }
     };
 
     fetchWeather();
-    const interval = setInterval(fetchWeather, 300000); // Update every 5 minutes
+    const interval = setInterval(fetchWeather, 300000); // Update every 5 min
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
     setSeasonState(getSeasonIcon());
-    const interval = setInterval(() => setSeasonState(getSeasonIcon()), 60000); // Update every minute
+    const interval = setInterval(() => setSeasonState(getSeasonIcon()), 60000); // Update every 1 min
     return () => clearInterval(interval);
   }, []);
 

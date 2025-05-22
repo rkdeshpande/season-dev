@@ -6,11 +6,14 @@ export function getSeasonIcon() {
     isSpring: month >= 3 && month <= 5,
     isSummer: month >= 6 && month <= 8,
     isAutumn: month >= 9 && month <= 11,
-    isWinter: month === 12 || month <= 2
+    isWinter: month === 12 || month <= 2,
   };
 }
 
-export function calculateSeason(temperature: number, date: Date = new Date()): number {
+export function calculateSeason(
+  temperature: number,
+  date: Date = new Date(),
+): number {
   const month = date.getMonth() + 1;
   const { isSpring, isSummer, isAutumn, isWinter } = getSeasonIcon();
 

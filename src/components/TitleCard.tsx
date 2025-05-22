@@ -1,7 +1,12 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudShowersHeavy, faSun, faWind, faSnowflake } from '@fortawesome/free-solid-svg-icons';
-import './TitleCard.css';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCloudShowersHeavy,
+  faSun,
+  faWind,
+  faSnowflake,
+} from "@fortawesome/free-solid-svg-icons";
+import "./TitleCard.css";
 
 interface TitleCardProps {
   isSpring: boolean;
@@ -10,32 +15,37 @@ interface TitleCardProps {
   isWinter: boolean;
 }
 
-const TitleCard: React.FC<TitleCardProps> = ({ isSpring, isSummer, isAutumn, isWinter }) => {
+const TitleCard: React.FC<TitleCardProps> = ({
+  isSpring,
+  isSummer,
+  isAutumn,
+  isWinter,
+}) => {
   return (
     <div className="hello">
-      <FontAwesomeIcon 
+      <FontAwesomeIcon
         data-testid="spring-icon"
-        className={`season-icon ${isSpring ? 'spring' : ''}`} 
-        icon={faCloudShowersHeavy} 
+        className={`season-icon ${isSpring ? "spring" : ""}`}
+        icon={faCloudShowersHeavy}
       />
-      <FontAwesomeIcon 
+      <FontAwesomeIcon
         data-testid="summer-icon"
-        className={`season-icon ${isSummer ? 'summer' : ''}`} 
-        icon={faSun} 
+        className={`season-icon ${isSummer ? "summer" : ""}`}
+        icon={faSun}
       />
-      <FontAwesomeIcon 
+      <FontAwesomeIcon
         data-testid="autumn-icon"
-        className={`season-icon ${isAutumn ? 'autumn' : ''}`} 
-        icon={faWind} 
+        className={`season-icon ${isAutumn ? "autumn" : ""}`}
+        icon={faWind}
       />
-      <FontAwesomeIcon 
+      <FontAwesomeIcon
         data-testid="winter-icon"
-        className={`season-icon ${isWinter ? 'winter' : ''}`} 
-        icon={faSnowflake} 
+        className={`season-icon ${isWinter ? "winter" : ""}`}
+        icon={faSnowflake}
       />
       <h1>What Boston Season Is It?</h1>
     </div>
   );
 };
 
-export default TitleCard; 
+export default TitleCard;

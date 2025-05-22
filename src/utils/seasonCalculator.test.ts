@@ -1,19 +1,19 @@
-import { getSeasonIcon, calculateSeason } from './seasonCalculator';
+import { getSeasonIcon, calculateSeason } from "./seasonCalculator";
 
-jest.mock('./seasonCalculator', () => ({
+jest.mock("./seasonCalculator", () => ({
   getSeasonIcon: jest.fn(),
-  calculateSeason: jest.fn()
+  calculateSeason: jest.fn(),
 }));
 
-describe('Season Calculator', () => {
-  describe('getSeasonIcon', () => {
+describe("Season Calculator", () => {
+  describe("getSeasonIcon", () => {
     afterEach(() => {
       jest.useRealTimers();
       jest.clearAllMocks();
     });
 
-    it('should correctly identify spring', () => {
-      const mockDate = new Date('2024-04-15');
+    it("should correctly identify spring", () => {
+      const mockDate = new Date("2024-04-15");
       jest.useFakeTimers();
       jest.setSystemTime(mockDate);
 
@@ -21,7 +21,7 @@ describe('Season Calculator', () => {
         isSpring: true,
         isSummer: false,
         isAutumn: false,
-        isWinter: false
+        isWinter: false,
       });
 
       const result = getSeasonIcon();
@@ -31,8 +31,8 @@ describe('Season Calculator', () => {
       expect(result.isWinter).toBe(false);
     });
 
-    it('should correctly identify summer', () => {
-      const mockDate = new Date('2024-07-15');
+    it("should correctly identify summer", () => {
+      const mockDate = new Date("2024-07-15");
       jest.useFakeTimers();
       jest.setSystemTime(mockDate);
 
@@ -40,7 +40,7 @@ describe('Season Calculator', () => {
         isSpring: false,
         isSummer: true,
         isAutumn: false,
-        isWinter: false
+        isWinter: false,
       });
 
       const result = getSeasonIcon();
@@ -50,8 +50,8 @@ describe('Season Calculator', () => {
       expect(result.isWinter).toBe(false);
     });
 
-    it('should correctly identify autumn', () => {
-      const mockDate = new Date('2024-10-15');
+    it("should correctly identify autumn", () => {
+      const mockDate = new Date("2024-10-15");
       jest.useFakeTimers();
       jest.setSystemTime(mockDate);
 
@@ -59,7 +59,7 @@ describe('Season Calculator', () => {
         isSpring: false,
         isSummer: false,
         isAutumn: true,
-        isWinter: false
+        isWinter: false,
       });
 
       const result = getSeasonIcon();
@@ -69,8 +69,8 @@ describe('Season Calculator', () => {
       expect(result.isWinter).toBe(false);
     });
 
-    it('should correctly identify winter', () => {
-      const mockDate = new Date('2024-01-15');
+    it("should correctly identify winter", () => {
+      const mockDate = new Date("2024-01-15");
       jest.useFakeTimers();
       jest.setSystemTime(mockDate);
 
@@ -78,7 +78,7 @@ describe('Season Calculator', () => {
         isSpring: false,
         isSummer: false,
         isAutumn: false,
-        isWinter: true
+        isWinter: true,
       });
 
       const result = getSeasonIcon();
@@ -89,141 +89,141 @@ describe('Season Calculator', () => {
     });
   });
 
-  describe('calculateSeason', () => {
+  describe("calculateSeason", () => {
     beforeEach(() => {
       jest.clearAllMocks();
     });
 
-    it('should return winter for January', () => {
+    it("should return winter for January", () => {
       (getSeasonIcon as jest.Mock).mockReturnValue({
         isSpring: false,
         isSummer: false,
         isAutumn: false,
-        isWinter: true
+        isWinter: true,
       });
       (calculateSeason as jest.Mock).mockReturnValue(1);
-      const date = new Date('2024-01-15');
+      const date = new Date("2024-01-15");
       expect(calculateSeason(30, date)).toBe(1);
     });
 
-    it('should return Fool\'s Spring for February with warm temperature', () => {
+    it("should return Fool's Spring for February with warm temperature", () => {
       (getSeasonIcon as jest.Mock).mockReturnValue({
         isSpring: false,
         isSummer: false,
         isAutumn: false,
-        isWinter: true
+        isWinter: true,
       });
       (calculateSeason as jest.Mock).mockReturnValue(2);
-      const date = new Date('2024-02-15');
+      const date = new Date("2024-02-15");
       expect(calculateSeason(45, date)).toBe(2);
     });
 
-    it('should return Second Winter for February with cold temperature', () => {
+    it("should return Second Winter for February with cold temperature", () => {
       (getSeasonIcon as jest.Mock).mockReturnValue({
         isSpring: false,
         isSummer: false,
         isAutumn: false,
-        isWinter: true
+        isWinter: true,
       });
       (calculateSeason as jest.Mock).mockReturnValue(1);
-      const date = new Date('2024-02-15');
+      const date = new Date("2024-02-15");
       expect(calculateSeason(35, date)).toBe(1);
     });
 
-    it('should return Spring of Deception for March with warm temperature', () => {
+    it("should return Spring of Deception for March with warm temperature", () => {
       (getSeasonIcon as jest.Mock).mockReturnValue({
         isSpring: false,
         isSummer: false,
         isAutumn: false,
-        isWinter: true
+        isWinter: true,
       });
       (calculateSeason as jest.Mock).mockReturnValue(4);
-      const date = new Date('2024-03-15');
+      const date = new Date("2024-03-15");
       expect(calculateSeason(45, date)).toBe(4);
     });
 
-    it('should return The Pollening for April with warm temperature', () => {
+    it("should return The Pollening for April with warm temperature", () => {
       (getSeasonIcon as jest.Mock).mockReturnValue({
         isSpring: true,
         isSummer: false,
         isAutumn: false,
-        isWinter: false
+        isWinter: false,
       });
       (calculateSeason as jest.Mock).mockReturnValue(6);
-      const date = new Date('2024-04-15');
+      const date = new Date("2024-04-15");
       expect(calculateSeason(55, date)).toBe(6);
     });
 
-    it('should return Summer for June with warm temperature', () => {
+    it("should return Summer for June with warm temperature", () => {
       (getSeasonIcon as jest.Mock).mockReturnValue({
         isSpring: false,
         isSummer: true,
         isAutumn: false,
-        isWinter: false
+        isWinter: false,
       });
       (calculateSeason as jest.Mock).mockReturnValue(8);
-      const date = new Date('2024-06-15');
+      const date = new Date("2024-06-15");
       expect(calculateSeason(75, date)).toBe(8);
     });
 
-    it('should return Hell\'s Front Porch for summer with hot temperature', () => {
+    it("should return Hell's Front Porch for summer with hot temperature", () => {
       (getSeasonIcon as jest.Mock).mockReturnValue({
         isSpring: false,
         isSummer: true,
         isAutumn: false,
-        isWinter: false
+        isWinter: false,
       });
       (calculateSeason as jest.Mock).mockReturnValue(9);
-      const date = new Date('2024-07-15');
+      const date = new Date("2024-07-15");
       expect(calculateSeason(90, date)).toBe(9);
     });
 
-    it('should return False Fall for September with cool temperature', () => {
+    it("should return False Fall for September with cool temperature", () => {
       (getSeasonIcon as jest.Mock).mockReturnValue({
         isSpring: false,
         isSummer: false,
         isAutumn: true,
-        isWinter: false
+        isWinter: false,
       });
       (calculateSeason as jest.Mock).mockReturnValue(10);
-      const date = new Date('2024-09-15');
+      const date = new Date("2024-09-15");
       expect(calculateSeason(60, date)).toBe(10);
     });
 
-    it('should return Second Summer for autumn with warm temperature', () => {
+    it("should return Second Summer for autumn with warm temperature", () => {
       (getSeasonIcon as jest.Mock).mockReturnValue({
         isSpring: false,
         isSummer: false,
         isAutumn: true,
-        isWinter: false
+        isWinter: false,
       });
       (calculateSeason as jest.Mock).mockReturnValue(11);
-      const date = new Date('2024-10-15');
+      const date = new Date("2024-10-15");
       expect(calculateSeason(60, date)).toBe(11);
     });
 
-    it('should return Actual Fall for autumn with moderate temperature', () => {
+    it("should return Actual Fall for autumn with moderate temperature", () => {
       (getSeasonIcon as jest.Mock).mockReturnValue({
         isSpring: false,
         isSummer: false,
         isAutumn: true,
-        isWinter: false
+        isWinter: false,
       });
       (calculateSeason as jest.Mock).mockReturnValue(12);
-      const date = new Date('2024-10-15');
+      const date = new Date("2024-10-15");
       expect(calculateSeason(45, date)).toBe(12);
     });
 
-    it('should return Winter for autumn with cold temperature', () => {
+    it("should return Winter for autumn with cold temperature", () => {
       (getSeasonIcon as jest.Mock).mockReturnValue({
         isSpring: false,
         isSummer: false,
         isAutumn: true,
-        isWinter: false
+        isWinter: false,
       });
       (calculateSeason as jest.Mock).mockReturnValue(1);
-      const date = new Date('2024-10-15');
+      const date = new Date("2024-10-15");
       expect(calculateSeason(30, date)).toBe(1);
     });
   });
-}); 
+});
