@@ -5,6 +5,8 @@ import Season from './components/Season';
 import { getSeasonIcon, calculateSeason } from './utils/seasonCalculator';
 import './App.css';
 
+// test comment for pre commit
+
 const App: React.FC = () => {
   const [season, setSeason] = useState<number>(8);
   const [seasonState, setSeasonState] = useState(getSeasonIcon());
