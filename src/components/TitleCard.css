@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Yeseva+One');
+@import url("https://fonts.googleapis.com/css2?family=Yeseva+One");
 
 .hello {
   color: #2c3e50;
@@ -7,7 +7,7 @@
 h1 {
   margin-top: 13px;
   font-size: 3em;
-  font-family: 'Yeseva One', sans-serif;
+  font-family: "Yeseva One", sans-serif;
 }
 
 .season-icon {
@@ -24,7 +24,7 @@ h1 {
 }
 
 .summer {
-  color: #EA5B32;
+  color: #ea5b32;
 }
 
 .autumn {
@@ -33,4 +33,4 @@ h1 {
 
 .winter {
   color: #81e2f1;
-} 
+}

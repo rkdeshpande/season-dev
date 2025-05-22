@@ -6,7 +6,7 @@ export default {
   create: jest.fn(),
   defaults: {
     headers: {
-      common: {}
-    }
-  }
-}; 
+      common: {},
+    },
+  },
+};
