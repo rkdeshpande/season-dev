@@ -20,9 +20,9 @@ export function calculateSeason(
     case 1:
       return 1; // Winter
     case 2:
-      return temperature >= 40 ? 2 : 1; // Fool's Spring / Second Winter
+      return temperature >= 40 ? 2 : 3; // Fool's Spring / Second Winter
     case 3:
-      return temperature >= 40 ? 4 : 1; // Spring of Deception / Third Winter
+      return temperature >= 40 ? 4 : 5; // Spring of Deception / Third Winter
     case 4:
       return 6; // The Pollening
     case 5:
@@ -33,12 +33,13 @@ export function calculateSeason(
     case 8:
       return temperature >= 85 ? 9 : 8; // Hell's Front Porch / Summer
     case 9:
-      return 10; // False Fall
+      return temperature >= 65 ? 11 : 10; // Second Summer / False Fall
     case 10:
       if (temperature >= 60) return 11; // Second Summer
       if (temperature >= 40) return 12; // Actual Fall
       return 1; // Winter
     case 11:
+      return temperature >= 40 ? 12 : 1; // Actual Fall / Winter
     case 12:
       return 1; // Winter
     default:

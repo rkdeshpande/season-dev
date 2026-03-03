@@ -68,12 +68,17 @@ describe("Season Calculator", () => {
 
     it("should return Second Winter for February with cold temperature", () => {
       const date = new Date("2024-02-15");
-      expect(calculateSeason(35, date)).toBe(1);
+      expect(calculateSeason(35, date)).toBe(3);
     });
 
     it("should return Spring of Deception for March with warm temperature", () => {
       const date = new Date("2024-03-15");
       expect(calculateSeason(45, date)).toBe(4);
+    });
+
+    it("should return Third Winter for March with cold temperature", () => {
+      const date = new Date("2024-03-15");
+      expect(calculateSeason(35, date)).toBe(5);
     });
 
     it("should return The Pollening for April with warm temperature", () => {
@@ -96,6 +101,11 @@ describe("Season Calculator", () => {
       expect(calculateSeason(60, date)).toBe(10);
     });
 
+    it("should return Second Summer for September with warm temperature", () => {
+      const date = new Date("2024-09-15");
+      expect(calculateSeason(70, date)).toBe(11);
+    });
+
     it("should return Second Summer for autumn with warm temperature", () => {
       const date = new Date("2024-10-15");
       expect(calculateSeason(60, date)).toBe(11);
@@ -109,6 +119,21 @@ describe("Season Calculator", () => {
     it("should return Winter for autumn with cold temperature", () => {
       const date = new Date("2024-10-15");
       expect(calculateSeason(30, date)).toBe(1);
+    });
+
+    it("should return Actual Fall for November with moderate temperature", () => {
+      const date = new Date("2024-11-15");
+      expect(calculateSeason(45, date)).toBe(12);
+    });
+
+    it("should return Winter for November with cold temperature", () => {
+      const date = new Date("2024-11-15");
+      expect(calculateSeason(35, date)).toBe(1);
+    });
+
+    it("should return Winter for December", () => {
+      const date = new Date("2024-12-15");
+      expect(calculateSeason(35, date)).toBe(1);
     });
   });
 });
